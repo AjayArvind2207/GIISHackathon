@@ -15,15 +15,13 @@
 
   /*==================================================================
     [ Validate ]*/
-  var name = $('.validate-input input[name="name"]');
-  var email = $('.validate-input input[name="email"]');
-  var message = $('.validate-input textarea[name="message"]');
+  var temp = $('.validate-input input[name="temperature"]');
 
   $(".validate-form").on("submit", function () {
     var check = true;
 
-    if ($(name).val().trim() == "") {
-      showValidate(name);
+    if ($(temp).val().trim() == "") {
+      showValidate(temp);
       check = false;
     }
 
