@@ -1,65 +1,43 @@
-from flask import Flask
-from flask import render_template, request, jsonify
-from flask import session
 import time
-import requests
 
-app = Flask(__name__, static_url_path='/static')
-app.secret_key = 'WEEB'
+import firebase_admin
+import json
+import requests
+from firebase_admin import firestore
+from flask import Flask, jsonify, render_template, request, session
+from flask_cors import CORS
+
+app = Flask(__name__)
+app.secret_key = '3d6f45a5fc12445dbac2f59c3b6c7cb1'
+CORS(app)
+
+cred_obj = firebase_admin.credentials.Certificate(
+    'quarantine-plus-plus-firebase-adminsdk-qpwi2-77a48fc6ca.json')
+default_app = firebase_admin.initialize_app(cred_obj)
+
 
 @app.route("/")
 def login():
-    return render_template("./index.html")
+    return render_template("index.html")
 
 @app.route("/temperature", methods = ['POST'])
 def get_temperature():
     temp = request.form["temperature"]
     # or however login works
     user = request.form["user"]
-    _id = 0
+
+    db = firestore.client()
+    doc_ref = db.collection(u'temperatures').document()
+    data = {
+        u'name': user,
+        u'temp': temp,
+        u'time': time.time()
+    }
+    doc_ref.set(data)
+
     print(temp)
-    return jsonify({'id': _id, 'time': time.time()})
+    return jsonify({'id': doc_ref.id, 'time': time.time()})
     #Stored in firebase --> can
-
-
-@app.route("/dailypuzzle")
-#Get the daily puzzle in the form of 
-def getLink():
-    import random
-    import requests 
-    import bs4
-    number = str(random.randint(1,100))
-    link='https://www.google.com/search?q='+'geeksforgeeks puzzle '+number
-    response=requests.get(link)
-    
-    ls=[]
-    links=[]
-    try:
-        soup=bs4.BeautifulSoup(response.text,features="html.parser")
-        
-        for tag in soup.find_all('a'):
-            ls.append(tag.get('href'))
-        
-        for link in ls:
-            if(link.startswith('/url?q=https://www.geeksforgeeks.org/puzzle-'+number)==True):
-                end=0
-                index=37
-                for c in link[37:]:
-                    if c=='/':
-                        end=index
-                        break
-                    index+=1
-                links.append(link[7:end])
-                break
-
-        print(links)
-        return links
-    
-    except:
-        print('Error')
-        return ['No Links Found!!']
-        raise()
-
 
 
 @app.route('/weather')
@@ -69,21 +47,20 @@ def weather() -> None:
     city_id = '1880252'
     url = f'https://api.openweathermap.org/data/2.5/weather?id={city_id}&appid={api_key}'
     data = requests.get(url).text
-    return jsonify(data)
+    return jsonify(json.loads(data))
 
 @app.route('/guten/<search>')
 def guten(search):
     url = f'https://gutendex.com/books/?search={search}'
     data = requests.get(url).text
-    return jsonify(data)
-
-
-if __name__ == '__main__':  
-    app.run()
-
-
-#@app.route("/entertainment")  #Courses + books + news 
-
+    
+    return jsonify(json.loads(data))
 
 
 #3@app.route("/emergency")
+
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
