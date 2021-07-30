@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../static/heading/style.css">
+    <link rel="icon" type="image/png" href="../static/logo.png"/>
+</head> 
+<body>
+    <div id="flexbox">
+        <h1 data-heading=Profile>
+            <span contenteditable data-heading=Profile>Profile</span>
+        </h1>
+    <div style="margin: auto;width: 50%;height:60%;"><div id="qr-reader" ></div></div>
+    <div id="qr-reader-results"></div></div>
+</body>
+<script src="https://github.com/mebjas/html5-qrcode/releases/download/V2.0.11/html5-qrcode.min.js"></script>
+<script>
+    function docReady(fn) {
+  if (
+    document.readyState === "complete" ||
+    document.readyState === "interactive"
+  ) {
+    setTimeout(fn, 1);
+  } else {
+    document.addEventListener("DOMContentLoaded", fn);
+  }
+}
+
+docReady(function () {
+  var resultContainer = document.getElementById("qr-reader-results");
+  var lastResult,
+    countResults = 0;
+  function onScanSuccess(decodedText, decodedResult) {
+    if (decodedText !== lastResult) {
+      ++countResults;
+      lastResult = decodedText;
+      console.log(decodedResult)
+      var elem = document.getElementById("qr-reader");
+      elem.parentNode.removeChild(elem);
+      window.location.href = ("/profile/" +(decodedResult["decodedText"])),true;
+    }
+  }
+  var html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", {
+    fps: 10,
+    qrbox: 250,
+  });
+  html5QrcodeScanner.render(onScanSuccess);
+});
+
+</script>
+<script  src="../static/heading/script.js"></script>
+</head>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Bar Management</title>
+  <link rel="stylesheet" href="../static/management/style.css">
+	<link rel="icon" type="image/png" href="../static/logo.png"/>
+
+</head>
+<body>
+<div class="cards">
+  {% for user in users %}
+  <div class="card">
+    <div class="card__image-holder">
+      <img class="card__image" src={{user["photoURL"]}} alt="wave" width="300px" height="290px">
+    </div>
+    <div class="card-title">
+      <a href="#" class="toggle-info btn">
+        <span class="left"></span>
+        <span class="right"></span>
+      </a>
+      <h2>
+          Name
+          <small>{{user["name"]}}</small>
+      </h2>
+    </div>
+    <div class="card-flap flap1">
+      <div class="card-description">
+        DOB: {{user["dob"]}}
+        <br>
+        Payment: {{user["payment"]}}
+        <br>
+        Nuisance: {{user["nuisance"]}}
+        <br>
+        Weight: {{user["weight"]}}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script><script  src="../static/management/script.js"></script>
+
+</body>
+</html>
