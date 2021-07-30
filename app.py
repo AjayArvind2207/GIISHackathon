@@ -17,8 +17,17 @@ default_app = firebase_admin.initialize_app(cred_obj)
 
 
 @app.route("/")
-def login():
+def temperature():
     return render_template("index.html")
+
+@app.route("/entertainment")
+def entertainment():
+    return render_template('entertainment.html')
+
+@app.route("/upcoming")
+def upcoming():
+    return render_template('upcoming.html')
+
 
 @app.route("/temperature", methods = ['POST'])
 def get_temperature():
