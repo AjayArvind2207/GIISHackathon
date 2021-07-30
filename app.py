@@ -71,7 +71,11 @@ def weather() -> None:
     data = requests.get(url).text
     return jsonify(data)
 
-
+@app.route('/guten/<search>')
+def guten(search):
+    url = f'https://gutendex.com/books/?search={search}'
+    data = requests.get(url).text
+    return jsonify(data)
 
 
 if __name__ == '__main__':  
