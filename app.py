@@ -1,22 +1,29 @@
-from flask import Flask, render_template, jsonify
-
+from flask import Flask
+from flask import render_template, request, jsonify
+from flask import session
+import time
+import requests
 
 app = Flask(__name__, static_url_path='/static')
+app.secret_key = 'WEEB'
 
 @app.route("/")
 def login():
-    return render_template("login_page.html")
+    return render_template("./index.html")
 
 @app.route("/temperature", methods = ['POST'])
 def get_temperature():
-    temp = requests.form("temperature")
+    temp = request.form["temperature"]
+    # or however login works
+    user = request.form["user"]
+    _id = 0
+    print(temp)
+    return jsonify({'id': _id, 'time': time.time()})
     #Stored in firebase --> can
-
 
 
 @app.route("/dailypuzzle")
 #Get the daily puzzle in the form of 
-
 def getLink():
     import random
     import requests 
@@ -52,6 +59,20 @@ def getLink():
         print('Error')
         return ['No Links Found!!']
         raise()
+
+
+
+@app.route('/weather')
+def weather() -> None:
+    '''This fetches the weather data'''
+    api_key = 'a6280859274843c64f27cccd1059ba8b'
+    city_id = '1880252'
+    url = f'https://api.openweathermap.org/data/2.5/weather?id={city_id}&appid={api_key}'
+    data = requests.get(url).text
+    return jsonify(data)
+
+
+
 
 if __name__ == '__main__':  
     app.run()
