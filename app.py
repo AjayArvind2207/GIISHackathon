@@ -35,12 +35,10 @@ def get_temperature():
     }
     doc_ref.set(data)
 
-    print(temp)
     return jsonify({'id': doc_ref.id, 'time': time.time()})
-    #Stored in firebase --> can
 
 
-@app.route('/weather')
+@app.route('/weather', methods = ['GET'])
 def weather() -> None:
     '''This fetches the weather data'''
     api_key = 'a6280859274843c64f27cccd1059ba8b'
@@ -49,7 +47,7 @@ def weather() -> None:
     data = requests.get(url).text
     return jsonify(json.loads(data))
 
-@app.route('/guten/<search>')
+@app.route('/guten/<search>', methods = ['GET'])
 def guten(search):
     url = f'https://gutendex.com/books/?search={search}'
     data = requests.get(url).text
@@ -57,8 +55,20 @@ def guten(search):
     return jsonify(json.loads(data))
 
 
-#3@app.route("/emergency")
+@app.route("/emergency", methods = ['POST', 'GET'])
+def emergency():
+    # or however login works
+    user = request.form["user"]
 
+    db = firestore.client()
+    doc_ref = db.collection(u'emergency').document()
+    data = {
+        u'name': user,
+        u'time': time.time()
+    }
+    doc_ref.set(data)
+    
+    return jsonify({'id': doc_ref.id, 'time': time.time()})
 
 
 
