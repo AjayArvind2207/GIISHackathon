@@ -10,6 +10,8 @@
       <link rel="stylesheet" href="../static/weather/normalize.css">
       <link rel="stylesheet" href="../static/weather/climacon-font/styles.css">
       <link rel="stylesheet" href="../static/weather/climacon.css">
+      <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
       
    <body onload='get_weather()'>
       <nav class="navbar sticky-top navbar-light" style="background-color: #e3f2fd;">
@@ -30,7 +32,7 @@
                <a class="nav-link" href="/temp">Temperature</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="/emergency">Emergency</a>
+                 <a class="nav-link emergency" href="#">Emergency</a>
                </li>
                <li class="nav-item">
                  <a class="nav-link" href="/entertainment">Entertainment</a>
@@ -223,5 +225,7 @@
       <script src="../static/index/vendor/jquery/jquery-3.2.1.min.js"></script>
       <script src="../static/entertain/js/bootstrap.min.js"></script>
       <script src="../static/weather/index.js"></script>
+      <script src="../static/emergency.js"></script>
+      <script src="../static/index/fireBase.js"></script>
    </body>
 </html>

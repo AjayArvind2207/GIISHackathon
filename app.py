@@ -75,7 +75,6 @@ def guten(search):
 
 @app.route("/emergency", methods = ['POST', 'GET'])
 def emergency():
-    # or however login works
     user = request.form["user"]
 
     db = firestore.client()

@@ -1,6 +1,11 @@
 $("#submit_button").click(function (event) {
   event.preventDefault();
-  var user = firebase.auth().currentUser.uid;
+  if (firebase.auth().currentUser) {
+    var user = firebase.auth().currentUser.uid;
+  } else {
+      alert('Please login');
+      return false;
+    };
   var temperature = $("#temperature").val();
   var temp = $('.validate-input input[name="temperature"]');
   if ($(temp).val().trim() != "") {
@@ -18,5 +23,5 @@ $("#submit_button").click(function (event) {
         );
       });
     };
-  return false;
+  return true;
 });
