@@ -50,6 +50,9 @@ def get_temperature():
 
     return jsonify({'id': doc_ref.id, 'time': time.time()})
 
+@app.route("/weath")
+def weath():
+    return render_template('weather.html')
 
 @app.route('/weather', methods = ['GET'])
 def weather() -> None:
