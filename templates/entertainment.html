@@ -16,41 +16,35 @@
 </head>
  
 <body>
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area ">
-                <div class="container-fluid p-0">
-                    <div class="row align-items-center justify-content-between no-gutters">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo-img">
-                                <a href="../static/main_page/index.html">
-                                    <img src="../static/logo.png" alt="" width="100em">
-                                </a>
-                            </div>
-                        </div>
-                        
-                    <div class="row align-items-center justify-content-between no-gutters">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo-img">
-                                <a href="../static/main_page/index.html">
-                                    <img src="../static/main_page/img/logo6.png" alt="" height="100px">
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-2 col-lg-2 d-none d-lg-block">
-                        
-                            
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <nav class="navbar sticky-top navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">
+            <img src="../static/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Quarantine++
+          </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/temp">Temperature</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/emergency">Emergency</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Entertainment <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/upcoming">Upcoming</a>
+              </li>
+          </ul>
         </div>
-    </header>
- 
+      </nav>
     <div class="all-page-title page-breadcrumb">
         <div class="container text-center">
             <div class="row">
