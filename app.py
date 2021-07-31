@@ -32,6 +32,9 @@ def entertainment():
 def upcoming():
     return render_template('upcoming.html')
 
+@app.route("/news")
+def news():
+    return render_template('news.html')
 
 @app.route("/temperature", methods = ['POST'])
 def get_temperature():

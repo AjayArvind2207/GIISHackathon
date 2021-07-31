@@ -8,7 +8,7 @@
         <meta content="Bootstrap News Template - Free HTML Templates" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="../static/news/img/favicon.ico" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet"> 
@@ -16,27 +16,44 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/slick/slick.css" rel="stylesheet">
-        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+        <link href="../static/news/lib/slick/slick.css" rel="stylesheet">
+        <link href="../static/news/lib/slick/slick-theme.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="../static/news/css/style.css" rel="stylesheet">
     </head>
 
     <body>
         <!-- Top Bar Start -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="tb-contact">
-                            <p><i class="fas fa-envelope"></i>quarantine++@gmail.com</p>
-                            <p><i class="fas fa-phone-alt"></i>+65 85950003</p>
-                        </div>
-                    </div>
-                </div>
+        <nav class="navbar sticky-top navbar-light" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="#">
+                <img src="../static/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                Quarantine++
+              </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/temp">Temperature</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/emergency">Emergency</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/entertainment">Entertainment</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/upcoming">Upcoming</a>
+                  </li>
+              </ul>
             </div>
-        </div>
+          </nav>
         <!-- Top Bar Start -->
         
         <!-- Brand Start -->
@@ -46,7 +63,7 @@
                     <div class="col-lg-3 col-md-4">
                         <div class="b-logo">
                             <a href="index.html">
-                                <img src="img/logo.png" alt="Logo">
+                                <img src="../static/news/img/logo.png" alt="Logo">
                             </a>
                         </div>
                     </div>
@@ -92,7 +109,7 @@
                         <div class="row tn-slider">
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-450x350-1.jpg" />
+                                    <img src="../static/news/img/news-450x350-1.jpg" />
                                     <div class="tn-title">
                                         <a href="https://www.todayonline.com/world/us-vice-president-harris-visit-vietnam-singapore-white-house">Kamala Harris to visit Singapore</a>
                                     </div>
@@ -100,7 +117,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-450x350-2.jpg" />
+                                    <img src="../static/news/img/news-450x350-2.jpg" />
                                     <div class="tn-title">
                                         <a  href="https://www.channelnewsasia.com/news/singapore/covid-19-schools-129-students-tested-positive-three-months-15338690">129 students, 17 school staff members tested positive for COVID-19 over last three months: Chan Chun Sing</a>
                                     </div>
@@ -112,7 +129,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img src="../static/news/img/news-350x223-1.jpg" />
                                     <div class="tn-title">
                                         <a href="https://www.channelnewsasia.com/news/sport/swimming-dressel-100m-butterfly-gold-tokyo-olympics-world-record-15344414">Swimming: Caeleb Dressel shatters world record to win 100m butterfly at Tokyo Olympics</a>
                                     </div>
@@ -120,7 +137,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-350x223-2.jpg" />
+                                    <img src="../static/news/img/news-350x223-2.jpg" />
                                     <div class="tn-title">
                                         <a href="https://www.channelnewsasia.com/news/sport/handball-france-denmark-stay-unbeaten-egypt-reach-quarter-finals-15341242">Handball: France, Denmark stay unbeaten, Egypt reach quarter-finals</a>
                                     </div>
@@ -128,7 +145,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-350x223-3.jpg" />
+                                    <img src="../static/news/img/news-350x223-3.jpg" />
                                     <div class="tn-title">
                                         <a href="https://www.channelnewsasia.com/news/commentary/simone-biles-gym-tokyo-olympics-2020-vault-team-us-mental-health-15338218">Simone Biles’ decision to withdraw from Tokyo 2020 should be applauded</a>
                                     </div>
@@ -136,7 +153,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-350x223-4.jpg" />
+                                    <img src="../static/news/img/news-350x223-4.jpg" />
                                     <div class="tn-title">
                                         <a href="https://www.channelnewsasia.com/news/technology/estonia-most-digitally-savvy-country-electronic-citizenship-13281738">Lessons from Estonia, the world's most digitally advanced nation</a>
                                     </div>
@@ -158,7 +175,7 @@
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img src="../static/news/img/news-350x223-1.jpg" />
                                     <div class="cn-title">
                                         <a href="https://www.channelnewsasia.com/news/sport/swimming-dressel-100m-butterfly-gold-tokyo-olympics-world-record-15344414">Swimming: Caeleb Dressel shatters world record to win 100m butterfly at Tokyo Olympics</a>
                                     </div>
@@ -166,7 +183,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-2.jpg" />
+                                    <img src="../static/news/img/news-350x223-2.jpg" />
                                     <div class="cn-title">
                                         <a href="https://www.channelnewsasia.com/news/sport/handball-france-denmark-stay-unbeaten-egypt-reach-quarter-finals-15341242">Handball: France, Denmark stay unbeaten, Egypt reach quarter-finals</a>
                                     </div>
@@ -174,7 +191,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-3.jpg" />
+                                    <img src="../static/news/img/news-350x223-3.jpg" />
                                     <div class="cn-title">
                                         <a href="https://www.channelnewsasia.com/news/commentary/simone-biles-gym-tokyo-olympics-2020-vault-team-us-mental-health-15338218">Simone Biles’ decision to withdraw from Tokyo 2020 should be applauded</a>
                                     </div>
@@ -187,7 +204,7 @@
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-4.jpg" />
+                                    <img src="../static/news/img/news-350x223-4.jpg" />
                                     <div class="cn-title">
                                         <a href="https://www.channelnewsasia.com/news/technology/estonia-most-digitally-savvy-country-electronic-citizenship-13281738">Lessons from Estonia, the world's most digitally advanced nation </a>
                                     </div>
@@ -195,7 +212,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-5.jpg" />
+                                    <img src="../static/news/img/news-350x223-5.jpg" />
                                     <div class="cn-title">
                                         <a href="https://www.cnet.com/tech/computing/windows-11-release-date-sounds-like-itll-be-sooner-than-we-first-thought/">Windows 11 release date sounds like it'll be sooner than we first thought</a>
                                     </div>
@@ -203,7 +220,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img src="../static/news/img/news-350x223-1.jpg" />
                                     <div class="cn-title">
                                         <a href="https://www.nytimes.com/2020/04/29/technology/facebook-earnings-advertising-virus.html">Facebook Points to ‘Signs of Stability’ as Ad Declines Flatten</a>
                                     </div>
@@ -234,10 +251,10 @@
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/slick/slick.min.js"></script>
+        <script src="../static/news/lib/easing/easing.min.js"></script>
+        <script src="../static/news/lib/slick/slick.min.js"></script>
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="../static/news/js/main.js"></script>
     </body>
 </html>
