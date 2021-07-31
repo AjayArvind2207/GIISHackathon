@@ -5,30 +5,61 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>Weather</title>
       <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="styles.css">
-      <link rel="stylesheet" href="normalize.css">
-      <link rel="stylesheet" href="climacon-font/styles.css">
-      <link rel="stylesheet" href="climacon.css">
-   <body>
+      <link rel="stylesheet" href="../static/entertain/css/bootstrap.min.css"> 
+      <link rel="stylesheet" href="../static/weather/styles.css">
+      <link rel="stylesheet" href="../static/weather/normalize.css">
+      <link rel="stylesheet" href="../static/weather/climacon-font/styles.css">
+      <link rel="stylesheet" href="../static/weather/climacon.css">
+      
+   <body onload='get_weather()'>
+      <nav class="navbar sticky-top navbar-light" style="background-color: #e3f2fd;">
+         <a class="navbar-brand" href="#">
+             <img src="../static/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+             Quarantine++
+           </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+       
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Home</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/temp">Temperature</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="/emergency">Emergency</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="/entertainment">Entertainment</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="/upcoming">Upcoming</a>
+               </li>
+           </ul>
+         </div>
+       </nav>
       <div class="main-wrapper">
          <div class="main-wrapper-mask"></div>
-         <div class="main-wrapper-blur" style="background-image: url(img/paris-lg.jpg)"></div>
+         <div class="main-wrapper-blur" style="background-image: url(../static/weather/img/paris-lg.jpg)"></div>
          <div class="main-wrapper-front">
             <div class="full-center">
                <div class="widget-block">
                	<!-- MAIN AREA -->
                   <div class="img-area">
                      <div class="img-area-mask"></div>
-                     <img src="img/paris-sm.jpg" alt="">
+                     <img src="../static/weather/img/paris-sm.jpg" alt="">
                      <div class="img-area-front">
                         <h5 class="location">Singapore</h5>
                         <p class="today">Saturday, July 31, 11:00</p>
                         <div class="weather-desc">
-                           <span>Cloudy, rain</span>
+                           <span class='weather-detail' style='text-transform: capitalize;'>Cloudy, rain</span>
                         </div>
                         <ul class="weather-block-info">
                            <li>
-                              <p class="temperature">25<span class="temperature-feels">+20 feels</span></p>
+                              <p class="temperature"><span class='max-temp'>25</span><span class="temperature-feels">+20 feels</span></p>
                            </li>
                            <li>
                            	<!-- MAIN ANIMATED SVG WEATHER ICON -->
@@ -123,9 +154,9 @@
                            </li>
                            <li>
                               <ul class="weather-params">
-                                 <li><i class="climacon thermometer medium-high"></i> <span>743 mm Hg</span></li>
-                                 <li><i class="climacon moon full"></i> <span>46% humidity</span></li>
-                                 <li><i class="climacon wind"></i> <span>2m/s NW</span></li>
+                                 <li><i class="climacon thermometer medium-high"></i> <span class='pressure'>743 mm Hg</span></li>
+                                 <li><i class="climacon moon full"></i> <span class='humid'>46% humidity</span></li>
+                                 <li><i class="climacon wind"></i> <span class="wind-speed">2m/s NW</span></li>
                               </ul>
                            </li>
                         </ul>
@@ -189,5 +220,7 @@
             </div>
          </div>
       </div>
+      <script src="../static/index/vendor/jquery/jquery-3.2.1.min.js"></script>
+      <script src="../static/weather/index.js"></script>
    </body>
 </html>
