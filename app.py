@@ -36,7 +36,6 @@ def upcoming():
 @app.route("/temperature", methods = ['POST'])
 def get_temperature():
     temp = request.form["temperature"]
-    # or however login works
     user = request.form["user"]
 
     db = firestore.client()
