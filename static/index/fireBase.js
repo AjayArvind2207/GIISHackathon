@@ -1,16 +1,15 @@
 var fireBase = fireBase || firebase;
 var hasInit = false;
-var config = {
-  apiKey: "AIzaSyD5DGSBbkYMqCfLRJQSFvVPtQ6Cw6dSF40",
-  authDomain: "reformbar-a4b02.firebaseapp.com",
-  projectId: "reformbar-a4b02",
-  storageBucket: "reformbar-a4b02.appspot.com",
-  messagingSenderId: "783205470099",
-  appId: "1:783205470099:web:25e4f8b5c7ed369e96e266",
-  measurementId: "G-YB39ZQSM0G",
+var firebaseConfig = {
+  apiKey: "AIzaSyBxxmcKtYP0J1LMRn8egow2ldVDdooK5gc",
+  authDomain: "quarantine-plus-plus.firebaseapp.com",
+  projectId: "quarantine-plus-plus",
+  storageBucket: "quarantine-plus-plus.appspot.com",
+  messagingSenderId: "670957449467",
+  appId: "1:670957449467:web:a0e3ed81217ab4b5aa405e",
+  measurementId: "G-3BDYW6PKQH"
 };
-
 if (!hasInit) {
-  firebase.initializeApp(config);
+  firebase.initializeApp(firebaseConfig);
   hasInit = true;
 }

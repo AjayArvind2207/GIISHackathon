@@ -1,6 +1,6 @@
 $("#submit_button").click(function (event) {
   event.preventDefault();
-  var user = $("#user").val();
+  var user = firebase.auth().currentUser.uid;
   var temperature = $("#temperature").val();
   var temp = $('.validate-input input[name="temperature"]');
   if ($(temp).val().trim() != "") {
